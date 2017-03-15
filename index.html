@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>javascript third assignment</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+			
+			#Clock{
+
+				font-size: 20px;
+				color: #fff;
+			}
+			.modal-body{
+
+				background: #053C77;
+			}
+		</style>
+	</head>
+	<body>
+
+	<h1></h1>
+
+<div class="container">
+		<div class="modal fade click" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  <div class="modal-dialog modal-sm" role="document">
+		    <div class="modal-content">
+		     <div class="modal-body text-center">
+		     	<p id="Clock"></p>
+		     </div>
+		    </div>
+		  </div>
+		</div>
+
+	
+
+
+		<script>
+
+		 //for modal 
+
+		 function Clck(){
+			 var a=new Date();
+			 var Time=a.toLocaleString();
+			 document.getElementById("Clock").innerHTML=Time;
+
+		 };
+
+		 setInterval(
+		 	function(){
+
+		 		Clck();
+		 	}
+		 	,1000);
+		
+
+		 setTimeout(
+		 	function(){
+
+		 		$('.click').modal('show');
+
+		 },1000);
+
+
+		</script>
+</div>
+
+	
+
+		<!-- palindrom -->
+
+	<div class="container">
+	<div class="col-sm-6">
+			<input type="text" class="innu" name="text" id="plndom">
+		
+			<button type="button" class="custom-btn" onclick="peno()"> PALINDROME</button>
+		
+		<h3 id="Rslt"></h3>
+
+		<script>
+		function peno(){
+			var str=document.getElementById("plndom").value;
+			var i=str.length;
+			var rvrs="";
+
+			
+			for (var j=i; j>=0; j--){
+				rvrs=rvrs+str.charAt(j);
+		       }
+		       
+
+				if (str==rvrs) {
+					document.getElementById("Rslt").innerHTML="Palindrome";
+				}else {
+					document.getElementById("Rslt").innerHTML="Not Palindrome";
+				}
+
+		} 
+		</script>
+
+	</div>
+
+
+	<div class="col-sm-6">
+		<input type="text" class="innu" name="text" id="inpt">
+		
+		<button type="button" class="custom-btn"  onclick="pink()"> Prime Number</button>
+
+		<h3 id="Pmnbr"></h3>
+
+		<script>
+		  function pink(){
+		       var str=document.getElementById("inpt").value;
+		       var i=0;
+		       var j=2;
+
+		       for (j; j<str; j++){
+		       	if (str%j == 0) {
+		       		i=j;
+		       	}
+
+		      }
+		      if (i==0) {
+		      	document.getElementById("Pmnbr").innerHTML=str +" "+"is prime number";
+		      }
+
+		      else{
+		      	document.getElementById("Pmnbr").innerHTML=str +" "+"is not prime number";
+		      }
+		  }
+		 
+
+		</script>
+
+	</div>
+</div>
+
+
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
